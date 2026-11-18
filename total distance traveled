@@ -1,0 +1,13 @@
+int distanceTraveled(int mainTank, int additionalTank) {
+   int fuelused = 0;
+   while (mainTank >=5){
+    mainTank -=5;
+    fuelused +=5;
+    if(additionalTank > 0){
+        additionalTank--;
+        mainTank +=1;
+    }
+   } 
+   fuelused +=mainTank;
+   return fuelused * 10;
+}

@@ -1,0 +1,32 @@
+#include <ctype.h>
+#include <stdbool.h>
+#include <string.h>
+
+bool isPalindrome(char* s) {
+    int left = 0;
+    int right = strlen(s) - 1;
+
+    while (left < right) {
+
+        // Skip non-alphanumeric characters from left
+        while (left < right && !isalnum((unsigned char)s[left])) {
+            left++;
+        }
+
+        // Skip non-alphanumeric characters from right
+        while (left < right && !isalnum((unsigned char)s[right])) {
+            right--;
+        }
+
+        // Compare characters ignoring uppercase/lowercase
+        if (tolower((unsigned char)s[left]) !=
+            tolower((unsigned char)s[right])) {
+            return false;
+        }
+
+        left++;
+        right--;
+    }
+
+    return true;
+}

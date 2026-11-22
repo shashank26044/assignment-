@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    char ch;
+    char s[100];
+    char sentence[100];
+
+    // Input a character
+    scanf("%c", &ch);
+
+    // Input a string
+    scanf("%s", s);
+
+    // Clear the leftover newline
+    getchar();
+
+    // Input a sentence
+    fgets(sentence, sizeof(sentence), stdin);
+
+    // Print the character
+    printf("%c\n", ch);
+
+    // Print the string
+    printf("%s\n", s);
+
+    // Print the sentence
+    printf("%s", sentence);
+
+    return 0;
+}
